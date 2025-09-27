@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hide a message in an emoji</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <h1 class="app-title">Hide a message in an emoji</h1>
+            <p class="app-subtitle">This tool allows you to encode a hidden message into an emoji or alphabet letter. You can copy and paste text with a hidden message in it to decode the message.</p>
+        </header>
+
+        <main class="app-main">
+            <div class="mode-toggle">
+                <button id="decodeBtn" class="btn btn--outline mode-btn">Decode</button>
+                <button id="encodeBtn" class="btn btn--primary mode-btn active">Encode</button>
+            </div>
+
+            <div class="content-area">
+                <div class="input-section">
+                    <div class="form-group">
+                        <label class="form-label" id="inputLabel">Message to hide:</label>
+                        <textarea id="messageInput" class="form-control message-textarea" placeholder="Type your secret message here..."></textarea>
+                    </div>
+                </div>
+
+                <div class="picker-section">
+                    <div class="picker-tabs">
+                        <button id="emojiTab" class="picker-tab active">Emojis</button>
+                        <button id="letterTab" class="picker-tab">Letters</button>
+                    </div>
+
+                    <div id="emojiPicker" class="picker-grid emoji-grid">
+                        <!-- Emojis will be populated by JavaScript -->
+                    </div>
+
+                    <div id="letterPicker" class="picker-grid letter-grid hidden">
+                        <!-- Letters will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <div class="output-section">
+                    <div class="form-group">
+                        <div class="output-header">
+                            <label class="form-label">Result:</label>
+                            <button id="copyBtn" class="btn btn--secondary copy-btn" disabled>
+                                <span class="copy-text">Copy</span>
+                                <span class="copy-success hidden">Copied!</span>
+                            </button>
+                        </div>
+                        <textarea id="resultOutput" class="form-control result-textarea" readonly placeholder="Your encoded/decoded result will appear here..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
